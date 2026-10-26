@@ -1,0 +1,19 @@
+import enums.Categoria;
+import exceptions.ValorInvalidoException;
+
+public class PedidoAlimento extends Pedido {
+    public PedidoAlimento(int id, String nomeCliente, double valor)
+            throws ValorInvalidoException {
+        super(id, nomeCliente, valor, Categoria.ALIMENTO);
+    }
+ 
+    @Override
+    public double calcularValorFinal() {
+        return getValor();
+    }
+ 
+    public double getFrete() {
+        return 5;
+    }
+}
+
